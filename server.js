@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 
 var PORT = 3000;
 
-var reservations = [{test: "one", test2: "two"}];
+var reservations = [];
 var waitList = [];
 
 var firstCustomer = {
