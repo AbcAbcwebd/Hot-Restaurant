@@ -55,7 +55,7 @@ app.post('/recieve-reservation', function(req, res) {
     	phone: localPhone,
     	email: localEmail
     };
-    if (reservations.length < 6){
+    if (reservations.length < 1){
     	reservations.push(customerObj);
     } else {
     	waitList.push(customerObj);

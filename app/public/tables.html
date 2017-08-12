@@ -69,6 +69,7 @@
 		
 		function getTable(){
 			$.get('/api/reservations', function(data, status){
+				console.log(data)
 				for(i = 0; i < data.length; i++){
 					var wrapper = $('<div>');
 					wrapper.addClass('table-info')
@@ -79,8 +80,24 @@
 					list.append('<li>' + data[i].phone + '</li>');
 					wrapper.append(list);
 					wrapper.append('<hr>');
+					$('#tableSection').append(wrapper)					
+				}
+			})
 
-					$('#tableSection').append(wrapper)
+			$.get('/api/wait-list', function(data, status){
+			console.log(data)
+			for(i = 0; i < data.length; i++){
+				var wrapper = $('<div>');
+				wrapper.addClass('table-info')
+				wrapper.append('<h3>Number '+(i+1)+ '</h3>')
+				var list = $('<ul>')	
+				list.append('<li>' + data[i].name + '</li>');
+				list.append('<li>' + data[i].email + '</li>');
+				list.append('<li>' + data[i].phone + '</li>');
+				wrapper.append(list);
+				wrapper.append('<hr>');
+
+				$('#waitlistSection').append(wrapper)
 				}
 			})
 		}
