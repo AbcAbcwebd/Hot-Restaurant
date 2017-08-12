@@ -20,11 +20,11 @@ var firstCustomer = {
 
 // YOUR CODE GOES HERE
 app.get("/api/reservations", function (req, res) {
-    res.json(reservations);
+    res.json(path.join(__dirname,reservations));
 });
 
 app.get("/api/wait-list", function (req, res) {
-    res.json(waitList);
+    res.json(path.join(__dirname,waitList));
 });
 
 app.get('/', function(req,res){
