@@ -18,15 +18,15 @@ var firstCustomer = {
     customerID: 1355
 }
 
+app.use(express.static(path.join(__dirname, 'app/public')));
 
 app.use( bodyParser.json() );       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
 })); 
 
-
 // YOUR CODE GOES HERE
-app.get("/api/reservations", function (req, res) {
+app.get("/api/tables", function (req, res) {
     res.json(reservations);
 });
 
@@ -60,6 +60,7 @@ app.post('/recieve-reservation', function(req, res) {
     } else {
     	waitList.push(customerObj);
     };
+    console.log(reservations)
     res.sendStatus(200);
 });
 
