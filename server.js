@@ -5,6 +5,7 @@ var bodyParser = require("body-parser");
 var app = express();
 var PORT = 3000;
 
+//customerObjects
 var firstCustomer = {
     customerName: "asdf",
     phoneNumber: "asdf",
