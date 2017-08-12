@@ -70,8 +70,21 @@
 				<p><a href="#" id="clear">Clear Table</a> | <a href="/api/reservations">API Table Link</a> | <a href="/api/wait-list">API Wait List</a></p>
 			</div>
 	    </footer>
-
+		
 	</div>
+
+	<script>
+	
+		$(window).on('load',getTables)
+		
+		function getTable(){
+			console.log('hey')
+			$.get('/api/reservation', function(data, status){
+				console.log('get data')
+			})
+		}
+
+	</script>
 
 </body>
 </html>
