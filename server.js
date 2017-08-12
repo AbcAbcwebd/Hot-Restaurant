@@ -7,7 +7,9 @@ var app = express();
 
 var PORT = 3000;
 
-//customerObjects
+var reservations = [{test: "one", test2: "two"}];
+var waitList = [];
+
 var firstCustomer = {
     customerName: "asdf",
     phoneNumber: "asdf",
@@ -17,8 +19,12 @@ var firstCustomer = {
 
 
 // YOUR CODE GOES HERE
-app.get("/firstCustomer", function (req, res) {
-    res.json(firstCustomer);
+app.get("/api/reservations", function (req, res) {
+    res.json(reservations);
+});
+
+app.get("/api/wait-list", function (req, res) {
+    res.json(waitList);
 });
 
 
