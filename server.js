@@ -49,7 +49,18 @@ app.get('/tables', function(req,res){
 })
 
 app.post('/recieve-reservation', function(req, res) {
-    console.log(req.body.name);
+    var localName = req.body.name;
+    var localPhone = req.body.phone;
+    var localEmail = req.body.email;
+    var customerObj = {
+    	name: localName,
+    	phone: localPhone,
+    	email: localEmail
+    };
+    reservations.push(customerObj);
+    console.log("Reservations");
+    console.log(reservations);
+    res.sendStatus(200);
 });
 
 
