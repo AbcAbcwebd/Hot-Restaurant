@@ -18,22 +18,22 @@ var firstCustomer = {
     customerID: 1355
 }
 
-/*
+
 app.use( bodyParser.json() );       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
 })); 
-app.use(express.json());       // to support JSON-encoded bodies
-app.use(express.urlencoded()); // to support URL-encoded bodies
-*/
+//app.use(express.json());       // to support JSON-encoded bodies
+//app.use(express.urlencoded()); // to support URL-encoded bodies
+
 
 // YOUR CODE GOES HERE
 app.get("/api/reservations", function (req, res) {
-    res.json(path.join(__dirname,reservations));
+    res.json(reservations);
 });
 
 app.get("/api/wait-list", function (req, res) {
-    res.json(path.join(__dirname,waitList));
+    res.json(waitList);
 });
 
 app.get('/', function(req,res){
