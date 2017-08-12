@@ -5,6 +5,9 @@ var express = require("express");
 var app = express();
 var PORT = 3000;
 
+var reservations = [];
+var waitList = [];
+
 var firstCustomer = {
     customerName: "asdf",
     phoneNumber: "asdf",
@@ -15,6 +18,18 @@ var firstCustomer = {
 
 // YOUR CODE GOES HERE
 app.get("/firstCustomer", function (req, res) {
+    res.json(firstCustomer);
+});
+
+app.get("/", function (req, res) {
+    res.json(firstCustomer);
+});
+
+app.get("/reserve", function (req, res) {
+    res.json(firstCustomer);
+});
+
+app.get("/tables", function (req, res) {
     res.json(firstCustomer);
 });
 
