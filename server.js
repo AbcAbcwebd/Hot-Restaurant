@@ -55,9 +55,11 @@ app.post('/recieve-reservation', function(req, res) {
     	phone: localPhone,
     	email: localEmail
     };
-    reservations.push(customerObj);
-    console.log("Reservations");
-    console.log(reservations);
+    if (reservations.length < 6){
+    	reservations.push(customerObj);
+    } else {
+    	waitList.push(customerObj);
+    };
     res.sendStatus(200);
 });
 
