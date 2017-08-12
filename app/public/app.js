@@ -1,3 +1,5 @@
+console.log("Linked")
+
 $( document ).ready(function() {
     $("#make-reservation").click(function(){
     	event.preventDefault();
