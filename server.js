@@ -26,11 +26,11 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 })); 
 
 // YOUR CODE GOES HERE
-app.get("/api/tables", function (req, res) {
+app.get("/api/reservations", function (req, res) {
     res.json(reservations);
 });
 
-app.get("/api/waitlist", function (req, res) {
+app.get("/api/wait-list", function (req, res) {
     res.json(waitList);
 });
 
