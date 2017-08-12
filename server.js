@@ -1,7 +1,7 @@
 //Dependencies
 
 var express = require("express");
-
+var path = require('path');
 var app = express();
 
 
@@ -26,6 +26,18 @@ app.get("/api/reservations", function (req, res) {
 app.get("/api/wait-list", function (req, res) {
     res.json(waitList);
 });
+
+app.get('/', function(req,res){
+    res.sendFile(path.join(__dirname,'app/public/index.html'))
+})
+
+app.get('/reserve', function(req,res){
+    res.sendFile(path.join(__dirname,'app/public/reserve.html'))
+})
+
+app.get('/tables', function(req,res){
+    res.sendFile(path.join(__dirname,'app/public/tables.html'))
+})
 
 
 // Listener
