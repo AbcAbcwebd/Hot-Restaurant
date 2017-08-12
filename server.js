@@ -3,6 +3,7 @@
 var express = require("express");
 var path = require('path');
 var app = express();
+var bodyParser = require('body-parser');
 
 
 var PORT = 3000;
@@ -17,6 +18,14 @@ var firstCustomer = {
     customerID: 1355
 }
 
+/*
+app.use( bodyParser.json() );       // to support JSON-encoded bodies
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+  extended: true
+})); 
+app.use(express.json());       // to support JSON-encoded bodies
+app.use(express.urlencoded()); // to support URL-encoded bodies
+*/
 
 // YOUR CODE GOES HERE
 app.get("/api/reservations", function (req, res) {
@@ -38,6 +47,10 @@ app.get('/reserve', function(req,res){
 app.get('/tables', function(req,res){
     res.sendFile(path.join(__dirname,'app/public/tables.html'))
 })
+
+app.post('/recieve-reservation', function(req, res) {
+    console.log(req.body.name);
+});
 
 
 // Listener
